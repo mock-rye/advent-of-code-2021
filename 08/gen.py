@@ -42,7 +42,7 @@ def decode(lst):
             else: # elem is a 2
                 dct[2] = elem
                 lst = remove(lst, elem)
-    dct = {sort("".join(list(dct[elem]))) : elem for elem in dct}
+    dct = {sort(list(dct[elem])) : elem for elem in dct}
     return dct
 
 with open("input.txt") as file:

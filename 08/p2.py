@@ -41,7 +41,7 @@ def decode(lst):
             else: # elem is a 2
                 dct[2] = elem
                 lst = remove(lst, elem)
-    dct = {sort("".join(list(dct[elem]))) : elem for elem in dct}
+    dct = {sort(list(dct[elem])) : elem for elem in dct}
     return dct
 
 
@@ -49,5 +49,5 @@ with open("input.txt") as file:
     inp = [line.strip().replace("|","").split() for line in file]
 
 inp = [[sort(x) for x in line] for line in inp]
-ans = sum([int("".join(doDecode(decode(line),line)[-4:])) for line in inp])
+ans = sum([int("".join(doDecode(decode(line),line[-4:]))) for line in inp])
 print(ans)
