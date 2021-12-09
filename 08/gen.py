@@ -52,5 +52,5 @@ inp = [[sort(x) for x in line] for line in inp]
 
 p1 = sum([sum(valid(x) for x in line[-4:]) for line in inp])
 print("p1:", p1)
-p2 = sum([int("".join(doDecode(decode(line),line)[-4:])) for line in inp])
+p2 = sum([int("".join(doDecode(decode(line),line[-4:]))) for line in inp])
 print("p2:", p2)
